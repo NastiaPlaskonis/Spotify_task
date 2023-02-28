@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Spotify Markets</title>
+</head>
+
+<body>
+
+    <h3>Введіть виконавця:</h3>
+
+    <form action="/search" method="POST">
+    <input type="text" name="query">
+    <input type="submit" value="Пошук">
+  </form>
+
+  {% if data %}
+    <p>Знайдено: <b><i>{{data['artist_name']}}</i></b></p>
+    <p>Найпопулярніший трек: <b><i>{{data['track']}}</i></b></p>
+  {% else %}
+    <p>Нічого не знайдено</p>
+  {% endif %}
+  <iframe src="/map" width="800" height="400"></iframe>
+  <!-- {% include "map.html"%} -->
+  {% for item in data['markets'] %}
+  <p>{{item}}</p>
+  {% endfor %}
+
+</body>
+</html>

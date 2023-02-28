@@ -1,0 +1,7 @@
+dotenv
+base64
+requests
+json
+pycountry
+geopy
+folium
